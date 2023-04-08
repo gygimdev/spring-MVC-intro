@@ -12,6 +12,8 @@ import java.util.Enumeration;
 /**
  * 1. 파라미터 전송 기능
  * http://localhost:8080/request-param?username=gim&age=18
+ * a. GET방식으로 보내거나
+ * b. POST form 을 통해서 보내거나 둘다 꺼낼 수 있다.
  */
 @WebServlet(name = "requestParamServlet", urlPatterns = "/request-param")
 public class RequestParamServlet extends HttpServlet {
@@ -26,6 +28,8 @@ public class RequestParamServlet extends HttpServlet {
         System.out.println("[단일 파라미터 조회]");
         String username = request.getParameter("username");
         String age = request.getParameter("age");
+        System.out.println("username = " + username);
+        System.out.println("age = " + age);
         System.out.println();
 
         System.out.println("[중복 파라미터 조회]");
